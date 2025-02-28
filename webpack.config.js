@@ -1,5 +1,5 @@
 const { merge } = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa-ts");
+const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (webpackConfigEnv, argv) => {
@@ -7,6 +7,7 @@ module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName,
     projectName: "root-config",
+    outputSystemJS: true,
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,
